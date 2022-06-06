@@ -1,4 +1,5 @@
 node {
+	def app
         stage('clone') { 
 		checkout scm
 
@@ -7,7 +8,7 @@ node {
                 app = docker.build("xavki/nginx")
         }
         stage('run') { 
-                docker.image('xavki/ngnix').withRun(-p 80:80' {c ->
+                docker.image('xavki/ngnix').withRun('-p 80:80' {c ->
 		sh 'docker ps'
 		sh 'curl localhost'
 		}
