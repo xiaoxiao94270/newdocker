@@ -4,7 +4,7 @@ node {
 
         }
         stage('build') { 
-                app = docker.build("xavki/nginx" 
+                app = docker.build("xavki/nginx")
         }
         stage('run') { 
                 docker.image('xavki/ngnix').withRun(-p 80:80' {c ->
